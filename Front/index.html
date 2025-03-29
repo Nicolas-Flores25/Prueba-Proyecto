@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrar Datos</title>
+</head>
+<body>
+    <button onclick="migrarDatos()">Migrar Datos</button>
+
+    <script>
+        function migrarDatos() {
+            fetch('http://localhost:3000/migrar', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
